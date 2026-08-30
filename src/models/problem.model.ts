@@ -48,13 +48,13 @@ const problemSchema = new mongoose.Schema<IProblem>({
         trim: true
     },
     testcases: [testSchema]
-}, {
+},{
     timestamps: true,
     toJSON: {
-        transform: (_: any, record: { id: any; _id: any; }) => {
+        transform: (_, record) => {
             delete (record as any).__v; // delete __v field
-            record.id = record._id; // add id field
-            delete record._id; // delete _id field
+            record._id = record._id; // add id field
+            //delete record._id; // delete _id field
             return record;
         }
     }

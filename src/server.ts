@@ -26,7 +26,8 @@ app.use(appErrorHandler);
 app.use(genericErrorHandler);
 
 
+
 app.listen(serverConfig.PORT, () => {
-    logger.info(`Server is running on http://localhost:${3000}`);
+    logger.info(`Server is running on http://localhost:${serverConfig.PORT}`);
     logger.info(`Press Ctrl+C to stop the server.`);
 });
